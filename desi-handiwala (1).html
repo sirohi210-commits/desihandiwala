@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desi HandiWala — Meerut Ka Asli Zaika</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Tiro+Devanagari+Hindi&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--saf:#E8821A;--tur:#D4A017;--mud:#2C1A0E;--clay:#6B3A2A;--cream:#FAF3E0;--parch:#F0E6C8;--smoke:#8B7355;--wh:#FFFDF7;--red:#C0392B}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--mud);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(44,26,14,0.95);backdrop-filter:blur(10px);padding:12px 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo img{width:36px;height:36px;object-fit:contain;filter:brightness(0) invert(1)}
+.nav-logo span{font-family:'Playfair Display',serif;font-size:18px;color:var(--cream);font-weight:700}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:rgba(250,243,224,0.6);text-decoration:none;font-size:13px;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--saf)}
+.nav-order{background:var(--saf);color:#fff;padding:8px 20px;border-radius:2px;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:0.5px;transition:background 0.2s}
+.nav-order:hover{background:#cf721a}
+@media(max-width:640px){.nav-links{display:none}}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 24px 80px;position:relative;overflow:hidden;background:var(--mud)}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 100% 70% at 50% 0%,rgba(232,130,26,0.2) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 90%,rgba(212,160,23,0.1) 0%,transparent 50%)}
+.ring{position:absolute;border-radius:50%;pointer-events:none;top:50%;left:50%;transform:translate(-50%,-50%)}
+.r1{width:500px;height:500px;border:1px solid rgba(232,130,26,0.1)}
+.r2{width:780px;height:780px;border:1px solid rgba(212,160,23,0.06)}
+.r3{width:1060px;height:1060px;border:1px solid rgba(232,130,26,0.04)}
+.hero-logo{position:relative;z-index:2;width:110px;height:110px;object-fit:contain;background:rgba(250,243,224,0.06);border-radius:50%;padding:14px;border:1px solid rgba(232,130,26,0.2);margin-bottom:20px;filter:drop-shadow(0 0 0 transparent);animation:ru .7s .1s ease both}
+.hero-eye{font-family:'Tiro Devanagari Hindi',serif;font-size:13px;color:var(--tur);letter-spacing:3px;position:relative;z-index:2;animation:ru .7s .2s ease both;margin-bottom:16px}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(50px,11vw,108px);font-weight:900;line-height:.9;color:var(--cream);position:relative;z-index:2;animation:ru .7s .3s ease both}
+.hero-h1 .acc{color:var(--saf);font-style:italic;display:block}
+.hero-sub{font-family:'Tiro Devanagari Hindi',serif;font-size:clamp(15px,3vw,21px);color:rgba(250,243,224,0.5);margin:16px 0 28px;position:relative;z-index:2;animation:ru .7s .4s ease both}
+.hero-tag{display:inline-block;border:1px solid rgba(232,130,26,0.3);color:var(--saf);font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:6px 20px;border-radius:2px;margin-bottom:40px;position:relative;z-index:2;animation:ru .7s .5s ease both}
+.hero-cta{position:relative;z-index:2;animation:ru .7s .6s ease both;display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.btn-z{display:inline-flex;align-items:center;gap:10px;background:var(--saf);color:#fff;padding:15px 34px;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;box-shadow:0 8px 28px rgba(232,130,26,0.4);transition:all .25s}
+.btn-z:hover{background:#cf721a;transform:translateY(-3px)}
+.zb{background:rgba(255,255,255,0.2);padding:3px 9px;border-radius:2px;font-size:10px;font-weight:700;letter-spacing:1px}
+.btn-c{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(250,243,224,0.2);color:var(--cream);padding:15px 28px;font-size:14px;font-weight:500;text-decoration:none;border-radius:2px;transition:all .25s}
+.btn-c:hover{border-color:var(--tur);color:var(--tur)}
+.scroll-h{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:rgba(250,243,224,0.2);font-size:11px;letter-spacing:2px;text-transform:uppercase;animation:bounce 2s infinite}
+
+/* ORNAMENT */
+.orn{text-align:center;padding:40px 24px;color:var(--tur);font-size:20px;letter-spacing:12px}
+
+/* SECTION COMMONS */
+.slbl{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--saf);margin-bottom:14px}
+.stitle{font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,48px);font-weight:700;line-height:1.1;margin-bottom:16px}
+.stitle em{color:var(--clay);font-style:italic}
+
+/* FAMOUS */
+.famous{padding:72px 24px;max-width:1080px;margin:0 auto}
+.famous-hd{text-align:center;margin-bottom:52px}
+.famous-hd p{color:var(--smoke);font-size:15px;max-width:540px;margin:0 auto;line-height:1.8}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.fc{border:1px solid rgba(61,43,31,0.1);border-radius:3px;padding:26px 22px;background:var(--wh);position:relative;overflow:hidden;transition:all .3s}
+.fc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--saf),var(--tur));opacity:0;transition:opacity .3s}
+.fc:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(61,43,31,0.1);border-color:rgba(232,130,26,0.2)}
+.fc:hover::before{opacity:1}
+.fstar{position:absolute;top:14px;right:14px;font-size:10px;background:var(--saf);color:#fff;padding:3px 8px;border-radius:2px;letter-spacing:1px;font-weight:700;text-transform:uppercase}
+.ficon{font-size:30px;margin-bottom:12px;display:block}
+.fc h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--mud);margin-bottom:4px}
+.fc .hi{font-family:'Tiro Devanagari Hindi',serif;font-size:12px;color:var(--tur);margin-bottom:8px;display:block}
+.fc p{font-size:12px;color:var(--smoke);line-height:1.65}
+.fprice{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:var(--saf)}
+
+/* MENU TABS */
+.menu-sec{padding:72px 24px}
+.menu-sec.dark{background:var(--mud)}
+.menu-inner{max-width:1080px;margin:0 auto}
+.menu-hd{text-align:center;margin-bottom:48px}
+.menu-hd.lt .stitle{color:var(--cream)}
+.menu-hd.lt .stitle em{color:var(--saf)}
+.menu-hd.lt .slbl{color:var(--tur)}
+.menu-hd.lt p{color:rgba(250,243,224,0.45);font-size:14px;margin-top:6px}
+.mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;background:rgba(61,43,31,0.07)}
+.dark .mg{background:rgba(250,243,224,0.05)}
+.mi{background:var(--wh);padding:22px 18px;transition:background .2s}
+.dark .mi{background:rgba(250,243,224,0.03)}
+.mi:hover{background:var(--parch)}
+.dark .mi:hover{background:rgba(232,130,26,0.07)}
+.mi .ic{font-size:22px;margin-bottom:8px;display:block}
+.mi h4{font-family:'Playfair Display',serif;font-size:15px;color:var(--mud);margin-bottom:3px}
+.dark .mi h4{color:var(--cream)}
+.mi .mhi{font-family:'Tiro Devanagari Hindi',serif;font-size:11px;color:var(--tur);margin-bottom:5px;display:block}
+.mi p{font-size:11px;color:var(--smoke);line-height:1.6}
+.dark .mi p{color:rgba(250,243,224,0.38)}
+.mi .price{font-size:13px;font-weight:700;color:var(--saf);margin-top:6px;display:block}
+
+/* COMBOS */
+.combos{padding:72px 24px;background:var(--parch);border-top:1px solid rgba(61,43,31,0.07);border-bottom:1px solid rgba(61,43,31,0.07)}
+.combos-inner{max-width:1000px;margin:0 auto}
+.combos-hd{text-align:center;margin-bottom:48px}
+.combos-hd p{color:var(--smoke);font-size:14px;margin-top:6px}
+.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.cc{background:var(--wh);border:1px solid rgba(61,43,31,0.1);border-radius:3px;padding:26px 22px;position:relative;transition:all .3s}
+.cc:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(61,43,31,0.09)}
+.cbdg{position:absolute;top:-11px;left:22px;background:var(--red);color:#fff;font-size:10px;font-weight:700;letter-spacing:1.5px;padding:4px 12px;border-radius:20px;text-transform:uppercase}
+.cc h3{font-family:'Playfair Display',serif;font-size:19px;color:var(--mud);margin-bottom:10px;margin-top:8px}
+.ci{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.ci span{font-size:12px;color:var(--smoke);display:flex;align-items:flex-start;gap:8px}
+.ci span::before{content:'✓';color:var(--saf);font-weight:700;flex-shrink:0;margin-top:1px}
+.ctag{display:inline-block;background:rgba(232,130,26,0.1);color:var(--saf);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px}
+
+/* BEVERAGES GRID */
+.bev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px;background:rgba(250,243,224,0.05)}
+.bev-item{background:rgba(250,243,224,0.03);padding:20px 16px;transition:background .2s;border-bottom:1px solid rgba(250,243,224,0.04)}
+.bev-item:hover{background:rgba(232,130,26,0.07)}
+.bev-item .ic{font-size:20px;margin-bottom:8px;display:block}
+.bev-item h4{font-size:14px;color:var(--cream);font-weight:600;margin-bottom:3px}
+.bev-item .price{font-size:13px;color:var(--saf);font-weight:700;display:block}
+.bev-item p{font-size:11px;color:rgba(250,243,224,0.35);line-height:1.5;margin-top:4px}
+
+/* THALI SECTION */
+.thali-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.thali-card{background:var(--wh);border:1px solid rgba(61,43,31,0.1);border-radius:3px;padding:24px 20px;transition:all .3s;position:relative;overflow:hidden}
+.thali-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--tur),var(--saf));opacity:0;transition:opacity .3s}
+.thali-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(61,43,31,0.1)}
+.thali-card:hover::after{opacity:1}
+.thali-card h3{font-family:'Playfair Display',serif;font-size:17px;color:var(--mud);margin-bottom:8px}
+.thali-card .includes{font-size:11px;color:var(--smoke);line-height:1.7;margin-bottom:12px}
+.thali-price{font-size:20px;font-weight:700;color:var(--saf);font-family:'Playfair Display',serif}
+
+/* VIBE */
+.vibe{padding:72px 24px;max-width:820px;margin:0 auto;text-align:center}
+.vibe p{font-size:15px;color:var(--smoke);line-height:1.85;max-width:560px;margin:0 auto 44px}
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.pill{background:var(--parch);border:1px solid rgba(61,43,31,0.1);color:var(--clay);padding:8px 18px;border-radius:40px;font-size:13px;font-weight:500;transition:all .2s;cursor:default}
+.pill:hover{background:var(--saf);color:#fff;border-color:var(--saf)}
+
+/* CONTACT */
+.contact{background:var(--mud);padding:56px 24px;text-align:center}
+.contact h2{font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,44px);color:var(--cream);margin-bottom:10px}
+.contact h2 span{color:var(--saf);font-style:italic}
+.contact p{color:rgba(250,243,224,0.4);font-size:14px;margin-bottom:36px}
+.crow{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-bottom:36px}
+.ci2{display:flex;flex-direction:column;align-items:center;gap:5px}
+.ci2 .lb{font-size:10px;letter-spacing:2px;color:rgba(250,243,224,0.25);text-transform:uppercase}
+.ci2 a,.ci2 .val{font-size:17px;font-weight:700;color:var(--cream);text-decoration:none;transition:color .2s}
+.ci2 a:hover{color:var(--saf)}
+
+/* CTA */
+.cta{padding:90px 24px;text-align:center;background:var(--mud);position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(232,130,26,0.13) 0%,transparent 65%)}
+.cta h2{font-family:'Playfair Display',serif;font-size:clamp(34px,8vw,72px);font-weight:900;color:var(--cream);line-height:1;margin-bottom:14px;position:relative;z-index:1}
+.cta h2 span{color:var(--saf);font-style:italic}
+.cta p{color:rgba(250,243,224,0.4);font-size:14px;margin-bottom:40px;position:relative;z-index:1}
+.cta .btn-z{position:relative;z-index:1;font-size:16px;padding:18px 44px}
+.dnote{margin-top:20px;font-size:11px;color:rgba(250,243,224,0.2);letter-spacing:1px;position:relative;z-index:1}
+
+footer{background:#150a04;padding:28px 24px;text-align:center}
+footer p{font-size:11px;color:rgba(250,243,224,0.18);letter-spacing:1px;line-height:2.2}
+footer a{color:var(--saf);text-decoration:none}
+
+.wa{position:fixed;bottom:22px;right:22px;background:#25D366;color:#fff;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 18px rgba(37,211,102,0.4);z-index:999;text-decoration:none;animation:wap 2s infinite}
+.wa:hover{transform:scale(1.1)}
+
+.div{height:1px;background:linear-gradient(90deg,transparent,rgba(232,130,26,0.3),transparent);margin:0 24px}
+
+@keyframes ru{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+@keyframes wap{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,0.4)}50%{box-shadow:0 4px 28px rgba(37,211,102,0.7)}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="data:image/jpeg;base64,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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/2Q==" alt="logo">
+    <span>Desi HandiWala</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#combos">Combos</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://zomato.onelink.me/xqzv/0ig80r3i" target="_blank" class="nav-order">Order Now</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+  <img class="hero-logo" src="data:image/jpeg;base64,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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/2Q==" alt="Desi HandiWala">
+  <div class="hero-eye">मेरठ का असली ज़ायका</div>
+  <h1 class="hero-h1">Desi<span class="acc">HandiWala</span></h1>
+  <div class="hero-sub">जहाँ हर थाली में घर का स्वाद है</div>
+  <div class="hero-tag">✦ Authentic Taste · Desi Style · Meerut ✦</div>
+  <div class="hero-cta">
+    <a href="https://zomato.onelink.me/xqzv/0ig80r3i" target="_blank" class="btn-z">🍽️ Zomato Pe Order Karo <span class="zb">LIVE</span></a>
+    <a href="tel:9410212545" class="btn-c">📞 9410212545</a>
+  </div>
+  <div class="scroll-h">↓ &nbsp; Menu Dekho</div>
+</section>
+
+<div class="orn">✦ &nbsp; ❋ &nbsp; ✦</div>
+
+<!-- FAMOUS 4 -->
+<section class="famous" id="menu">
+  <div class="famous-hd">
+    <div class="slbl">Sabse Famous Items</div>
+    <h2 class="stitle">Jo Cheezein Hain <em>Sabse Mashoor</em></h2>
+    <p>Yeh 4 dishes hain jinke liye Meerut mein Desi HandiWala jaana jaata hai</p>
+  </div>
+  <div class="fg">
+    <div class="fc">
+      <span class="fstar">👑 Must Try</span>
+      <span class="ficon">🧀</span>
+      <h3>Rajwada Paneer</h3>
+      <span class="hi">राजवाड़ा पनीर</span>
+      <p>Shahi style paneer in rich tomato-cashew-cream gravy. Meerut ka sabse popular paneer dish.</p>
+      <span class="fprice">₹299</span>
+    </div>
+    <div class="fc">
+      <span class="fstar">⭐ Bestseller</span>
+      <span class="ficon">🍳</span>
+      <h3>Bhurji-E-Paneer</h3>
+      <span class="hi">पनीर भुर्जी</span>
+      <p>Scrambled paneer with onion, tomatoes, fresh spices. Regular ₹279 · Full ₹429 · Jumbo ₹599</p>
+      <span class="fprice">from ₹279</span>
+    </div>
+    <div class="fc">
+      <span class="fstar">❤️ Loved</span>
+      <span class="ficon">🫘</span>
+      <h3>Masala-E-Rajma</h3>
+      <span class="hi">देसी घी राजमा मसाला</span>
+      <p>Slow cooked kidney beans in desi ghee with thick masala gravy. Served in 5 sizes — 150ml to 750ml.</p>
+      <span class="fprice">from ₹123</span>
+    </div>
+    <div class="fc">
+      <span class="fstar">🔥 Famous</span>
+      <span class="ficon">🫓</span>
+      <h3>Hamare Parathe</h3>
+      <span class="hi">प्रसिद्ध पराठे</span>
+      <p>14+ varieties — Aloo, Paneer, Aloo Pyaaz, Laccha, Ajwain, Methi aur bahut kuch. Desi ghee mein seke.</p>
+      <span class="fprice">from ₹65</span>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- PARATHE -->
+<section class="menu-sec">
+  <div class="menu-inner">
+    <div class="menu-hd">
+      <div class="slbl">Royal Paratha's Collection</div>
+      <h2 class="stitle">Hamare <em>Lajawab Parathe</em></h2>
+      <p style="color:var(--smoke);font-size:14px;margin-top:6px">Desi ghee ya butter mein seke — har paratha ek experience hai</p>
+    </div>
+    <div class="mg">
+      <div class="mi"><span class="ic">🥔</span><h4>Desi Aloo Tawa Paratha</h4><span class="mhi">आलू पराठा</span><p>Ghee ya butter mein — classic spiced potato filling.</p><span class="price">₹79</span></div>
+      <div class="mi"><span class="ic">🧅</span><h4>Desi Aloo Pyaaz Tawa Paratha</h4><span class="mhi">आलू-प्याज़ पराठा</span><p>Potato + caramelized onion — hearty combo.</p><span class="price">₹89</span></div>
+      <div class="mi"><span class="ic">🧀</span><h4>Desi Paneer Loaded Tawa Paratha</h4><span class="mhi">पनीर पराठा</span><p>Spicy crumbled paneer stuffing — pure whole wheat.</p><span class="price">₹111</span></div>
+      <div class="mi"><span class="ic">🧀🥔</span><h4>Desi Aloo Paneer Tawa Paratha</h4><span class="mhi">आलू-पनीर पराठा</span><p>Boiled potato + grated paneer filling.</p><span class="price">₹99</span></div>
+      <div class="mi"><span class="ic">🧅</span><h4>Paneer Pyaz Paratha</h4><span class="mhi">पनीर प्याज़ पराठा</span><p>Paneer aur onion ka bold combination.</p><span class="price">₹99</span></div>
+      <div class="mi"><span class="ic">🧅</span><h4>Pyaz Paratha</h4><span class="mhi">प्याज़ पराठा</span><p>Crispy spiced onion — cooked with desi ghee.</p><span class="price">₹89</span></div>
+      <div class="mi"><span class="ic">🌿</span><h4>Methi Paratha</h4><span class="mhi">मेथी पराठा</span><p>Crispy flaky fenugreek flavored whole wheat flatbread.</p><span class="price">₹65</span></div>
+      <div class="mi"><span class="ic">🌿🥔</span><h4>Aloo Methi Paratha</h4><span class="mhi">आलू-मेथी पराठा</span><p>Mashed aloo + methi with secret masala.</p><span class="price">₹75</span></div>
+      <div class="mi"><span class="ic">🌶️</span><h4>Green Chilli Tawa Paratha</h4><span class="mhi">हरी मिर्च पराठा</span><p>Super crisp, spicy — served with curd + pickle.</p><span class="price">₹69</span></div>
+      <div class="mi"><span class="ic">🧄</span><h4>Desi Lehsuni Laccha Tawa Paratha</h4><span class="mhi">लहसुनी लच्छा पराठा</span><p>Garlic + desi ghee in layered flatbread.</p><span class="price">₹85</span></div>
+      <div class="mi"><span class="ic">🌶️🧄</span><h4>Desi Lehsuni Mirch Paratha</h4><span class="mhi">लहसुनी मिर्च पराठा</span><p>Garlic + red chilli — bold and spicy.</p><span class="price">₹74</span></div>
+      <div class="mi"><span class="ic">🌾</span><h4>Desi Masala Laccha Tawa Paratha</h4><span class="mhi">मसाला लच्छा पराठा</span><p>Spicy layered paratha with spice toppings.</p><span class="price">₹85</span></div>
+      <div class="mi"><span class="ic">🥞</span><h4>Desi Laccha Tawa Paratha</h4><span class="mhi">लच्छा पराठा</span><p>Ghee mein fried, crispy flaky layers.</p><span class="price">₹75</span></div>
+      <div class="mi"><span class="ic">🧄</span><h4>Desi Ajwain Tawa Paratha</h4><span class="mhi">अजवाइन पराठा</span><p>Fragrant carom seeds in unleavened wheat flatbread.</p><span class="price">₹65</span></div>
+      <div class="mi"><span class="ic">👑</span><h4>Malabar Paratha</h4><span class="mhi">मलाबार परोठा</span><p>Soft flaky layered Kerala style paratha.</p><span class="price">₹79</span></div>
+      <div class="mi"><span class="ic">🦁</span><h4>Bahubali Aloo Paratha</h4><span class="mhi">बाहुबली आलू पराठा</span><p>Giant paratha — bharpur aloo stuffing, garam makkhan, served with fresh dahi.</p><span class="price">₹189</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- ROTIS & BREADS -->
+<section class="menu-sec dark" id="rotis">
+  <div class="menu-inner">
+    <div class="menu-hd lt">
+      <div class="slbl">Breads Section</div>
+      <h2 class="stitle">Tawa Rotis &amp; <em>Breads</em></h2>
+      <p>Seedhe tawa pe — soft, warm aur bilkul ghar jaisi</p>
+    </div>
+    <div class="mg">
+      <div class="mi"><span class="ic">🫓</span><h4>Tawa Roti</h4><span class="mhi">तवा रोटी</span><p>Charred whole wheat — soft, served with any curry.</p><span class="price">₹14</span></div>
+      <div class="mi"><span class="ic">🧈</span><h4>Tawa Roti with Butter</h4><span class="mhi">बटर तवा रोटी</span><p>Fresh roti with generous Amul butter.</p><span class="price">₹20</span></div>
+      <div class="mi"><span class="ic">🥛</span><h4>Tawa Roti with Ghee</h4><span class="mhi">घी तवा रोटी</span><p>Pure desi ghee applied while serving.</p><span class="price">₹24</span></div>
+      <div class="mi"><span class="ic">🌾</span><h4>Multigrain Tawa Roti</h4><span class="mhi">मल्टीग्रेन रोटी</span><p>Wheat + ragi + bajra + besan + oats.</p><span class="price">₹25</span></div>
+      <div class="mi"><span class="ic">🌾🧈</span><h4>Multigrain with Butter</h4><span class="mhi">मल्टीग्रेन बटर रोटी</span><p>Healthy multigrain coated with butter.</p><span class="price">₹29</span></div>
+      <div class="mi"><span class="ic">🌾🥛</span><h4>Multigrain with Desi Ghee</h4><span class="mhi">मल्टीग्रेन घी रोटी</span><p>Pure desi ghee on multigrain roti.</p><span class="price">₹34</span></div>
+      <div class="mi"><span class="ic">🌽</span><h4>Desi Missi Roti (Chulhe Ki)</h4><span class="mhi">मिस्सी रोटी (चूल्हे की)</span><p>Gehu + chana flour — village style, with pickle.</p><span class="price">₹29</span></div>
+      <div class="mi"><span class="ic">📦</span><h4>Tawa Roti Combo of 5</h4><span class="mhi">5 रोटी कॉम्बो</span><p>5 freshly made tawa rotis — soft, warm.</p><span class="price">₹69</span></div>
+      <div class="mi"><span class="ic">📦🧈</span><h4>Butter Tawa Roti Combo of 5</h4><span class="mhi">5 बटर रोटी कॉम्बो</span><p>5 butter tawa rotis.</p><span class="price">₹99</span></div>
+      <div class="mi"><span class="ic">📦🥛</span><h4>Desi Ghee Tawa Roti Combo of 4</h4><span class="mhi">4 घी रोटी कॉम्बो</span><p>4 pure desi ghee tawa rotis.</p><span class="price">₹99</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- POHA -->
+<section class="menu-sec">
+  <div class="menu-inner">
+    <div class="menu-hd">
+      <div class="slbl">Poha Paradise</div>
+      <h2 class="stitle">Poha Ki <em>Saari Variety</em></h2>
+      <p style="color:var(--smoke);font-size:14px;margin-top:6px">Subah ka asar — fresh, light aur full of flavour</p>
+    </div>
+    <div class="mg">
+      <div class="mi"><span class="ic">🍚</span><h4>Plain Poha</h4><span class="mhi">सादा पोहा</span><p>Simple, soothing — mustard aur curry leaves ke saath.</p><span class="price">₹95</span></div>
+      <div class="mi"><span class="ic">🥜</span><h4>Peanut Poha</h4><span class="mhi">मूंगफली पोहा</span><p>Crunch meets comfort — golden roasted peanuts.</p><span class="price">₹109</span></div>
+      <div class="mi"><span class="ic">🧀</span><h4>Paneer Poha</h4><span class="mhi">पनीर पोहा</span><p>Protein packed — soft paneer with every grain of poha.</p><span class="price">₹129</span></div>
+      <div class="mi"><span class="ic">🍋</span><h4>Khatta Meetha Poha</h4><span class="mhi">खट्टा-मीठा पोहा</span><p>Lemon zest + sugar coated — playful sweet-tangy punch.</p><span class="price">₹95</span></div>
+      <div class="mi"><span class="ic">🍋🥜</span><h4>Khatta Meetha Peanut Poha</h4><span class="mhi">खट्टा-मीठा मूंगफली पोहा</span><p>Sweet, sour aur satisfyingly crunchy.</p><span class="price">₹109</span></div>
+      <div class="mi"><span class="ic">🍋🧀</span><h4>Khatta Meetha Paneer Poha</h4><span class="mhi">खट्टा-मीठा पनीर पोहा</span><p>Desi fusion — mild sweetness + zesty lemon + soft paneer.</p><span class="price">₹149</span></div>
+      <div class="mi"><span class="ic">🌶️</span><h4>Spicy Poha</h4><span class="mhi">मसालेदार पोहा</span><p>Bold morning flavour — extra masala.</p><span class="price">₹99</span></div>
+      <div class="mi"><span class="ic">🌶️🥜</span><h4>Spicy Peanut Poha</h4><span class="mhi">मसालेदार मूंगफली पोहा</span><p>Red + green chillies meet crispy peanuts.</p><span class="price">₹129</span></div>
+      <div class="mi"><span class="ic">🌶️🧀</span><h4>Spicy Paneer Poha</h4><span class="mhi">मसालेदार पनीर पोहा</span><p>Hot + wholesome — paneer meets the fire.</p><span class="price">₹159</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- VEG CURRIES -->
+<section class="menu-sec dark">
+  <div class="menu-inner">
+    <div class="menu-hd lt">
+      <div class="slbl">Royal Veg Curries</div>
+      <h2 class="stitle">Veg Main <em>Course</em></h2>
+      <p>Handi mein pakti, dil se banti — har curry ek kahani hai</p>
+    </div>
+    <div class="mg">
+      <div class="mi"><span class="ic">👑</span><h4>Rajwada Paneer</h4><span class="mhi">राजवाड़ा पनीर</span><p>Shahi paneer cooked in tomato-cashew-cream gravy.</p><span class="price">₹299</span></div>
+      <div class="mi"><span class="ic">🧀</span><h4>Paneer Butter Masala</h4><span class="mhi">पनीर बटर मसाला</span><p>Rich makhani gravy. Quarter ₹229 · Half ₹329 · Full ₹429</p><span class="price">from ₹229</span></div>
+      <div class="mi"><span class="ic">🫘</span><h4>Masala-E-Rajma</h4><span class="mhi">राजमा मसाला</span><p>Desi ghee rajma — 5 sizes: 150ml to 750ml.</p><span class="price">from ₹123</span></div>
+      <div class="mi"><span class="ic">🥘</span><h4>Dal Makhani</h4><span class="mhi">दाल मखनी</span><p>Slow cooked black lentils — creamy restaurant style.</p><span class="price">from ₹129</span></div>
+      <div class="mi"><span class="ic">🥗</span><h4>Maharaja's Desi Handi Dal</h4><span class="mhi">महाराजा की दाल</span><p>Thick, velvety — collapses into a rich rough puree.</p><span class="price">from ₹129</span></div>
+      <div class="mi"><span class="ic">🌿</span><h4>Palak Paneer</h4><span class="mhi">पालक पनीर</span><p>Fresh spinach curry with cottage cheese.</p><span class="price">₹259</span></div>
+      <div class="mi"><span class="ic">🫛</span><h4>Matar Paneer</h4><span class="mhi">मटर पनीर</span><p>Green peas + paneer in spicy tomato gravy. Regular ₹199 · Full ₹359</p><span class="price">from ₹199</span></div>
+      <div class="mi"><span class="ic">🧆</span><h4>Amritsari Chana Masala</h4><span class="mhi">अमृतसरी छोले</span><p>Punjabi style spicy chickpea curry — 5 sizes.</p><span class="price">from ₹119</span></div>
+      <div class="mi"><span class="ic">🥘</span><h4>Handi Saag Special</h4><span class="mhi">हांडी साग</span><p>Mustard leaves + spinach + bathua in desi spices.</p><span class="price">₹200</span></div>
+      <div class="mi"><span class="ic">🍛</span><h4>Tandoori Kadhi Tadka</h4><span class="mhi">तंदूरी कढ़ी तड़का</span><p>Yogurt curry with gram flour pakoda in desi spices.</p><span class="price">₹119</span></div>
+      <div class="mi"><span class="ic">🥦</span><h4>Mix Veg</h4><span class="mhi">मिक्स वेज</span><p>Cauliflower, carrot, cabbage, beans, peas.</p><span class="price">₹169</span></div>
+      <div class="mi"><span class="ic">🧀🥘</span><h4>Handi Paneer Kalimirch</h4><span class="mhi">पनीर काली मिर्च</span><p>Paneer tossed in creamy black pepper sauce.</p><span class="price">₹279</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- LASSI & MILKSHAKES -->
+<section class="menu-sec dark" id="beverages">
+  <div class="menu-inner">
+    <div class="menu-hd lt">
+      <div class="slbl">Beverages</div>
+      <h2 class="stitle">Lassi, Milkshakes &amp; <em>More</em></h2>
+      <p>Desi drinks jo meal ko complete karte hain</p>
+    </div>
+    <div style="margin-bottom:32px">
+      <p style="color:var(--tur);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px">— Lassi Collection —</p>
+      <div class="bev-grid">
+        <div class="bev-item"><span class="ic">🥛</span><h4>Dry Fruit Lassi</h4><span class="price">₹149</span><p>Tasty and flavorful with premium dry fruits.</p></div>
+        <div class="bev-item"><span class="ic">🍍</span><h4>Pineapple Flavour Lassi</h4><span class="price">₹169</span><p>Tropical twist in creamy dahi.</p></div>
+        <div class="bev-item"><span class="ic">🍫</span><h4>Chocolate Flavour Lassi</h4><span class="price">₹169</span><p>Indulgent chocolate in thick lassi.</p></div>
+        <div class="bev-item"><span class="ic">🍓</span><h4>Strawberry Flavour Lassi</h4><span class="price">₹169</span><p>Sweet strawberry aur creamy dahi.</p></div>
+        <div class="bev-item"><span class="ic">🫐</span><h4>Blackcurrant Flavour Lassi</h4><span class="price">₹179</span><p>Deep purple tangy punch.</p></div>
+        <div class="bev-item"><span class="ic">🥭</span><h4>Mango Flavour Lassi</h4><span class="price">₹169</span><p>Real mango aur thick dahi.</p></div>
+        <div class="bev-item"><span class="ic">🌸</span><h4>Kesar Badam Lassi</h4><span class="price">₹179</span><p>Saffron + almond — royal and aromatic.</p></div>
+      </div>
+    </div>
+    <div style="margin-bottom:32px">
+      <p style="color:var(--tur);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px">— Premium Milkshakes —</p>
+      <div class="bev-grid">
+        <div class="bev-item"><span class="ic">🍦</span><h4>Vanilla Velvet</h4><span class="price">₹179</span><p>Classic vanilla — smooth, simple, soulful.</p></div>
+        <div class="bev-item"><span class="ic">🍍</span><h4>Tropical Pineapple Bliss</h4><span class="price">₹179</span><p>Creamy milk + juicy ripe pineapples.</p></div>
+        <div class="bev-item"><span class="ic">🥭</span><h4>Mango Magic</h4><span class="price">₹179</span><p>Rich alphonso mangoes — desi royal twist.</p></div>
+        <div class="bev-item"><span class="ic">🫚</span><h4>Cardamom Charm Elaichi Shake</h4><span class="price">₹179</span><p>Traditional cardamom — aromatic, unforgettable.</p></div>
+        <div class="bev-item"><span class="ic">🌰</span><h4>Royal Dry Fruit Delight</h4><span class="price">₹189</span><p>Almonds, cashew, pista, raisins — shahi andaz.</p></div>
+        <div class="bev-item"><span class="ic">🌸</span><h4>Kesar Badam Milkshake</h4><span class="price">₹199</span><p>Golden kesar + roasted badam — tastes like heaven.</p></div>
+        <div class="bev-item"><span class="ic">🫐</span><h4>Blackcurrant Blast</h4><span class="price">₹189</span><p>Deep purple delight with tangy punch.</p></div>
+        <div class="bev-item"><span class="ic">🍫</span><h4>KitKat Kraze</h4><span class="price">₹179</span><p>Crispy KitKat chunks in thick chocolaty shake.</p></div>
+        <div class="bev-item"><span class="ic">🍪</span><h4>Oreo Overload</h4><span class="price">₹179</span><p>Loaded with crushed Oreo.</p></div>
+        <div class="bev-item"><span class="ic">🍬</span><h4>Butterscotch Buzz</h4><span class="price">₹189</span><p>Sweet, nutty, buttery — nostalgic silky shake.</p></div>
+        <div class="bev-item"><span class="ic">🍓</span><h4>Strawberry Swirl</h4><span class="price">₹179</span><p>Luscious strawberries + chilled milk.</p></div>
+        <div class="bev-item"><span class="ic">🍫🔥</span><h4>Choco Loco</h4><span class="price">₹199</span><p>Pure chocolate madness — one sip is never enough.</p></div>
+      </div>
+    </div>
+    <div>
+      <p style="color:var(--tur);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px">— Chai & Coffee —</p>
+      <div class="bev-grid">
+        <div class="bev-item"><span class="ic">☕</span><h4>Plain Tea</h4><span class="price">₹40</span></div>
+        <div class="bev-item"><span class="ic">🌶️☕</span><h4>Masala Tea</h4><span class="price">₹49</span></div>
+        <div class="bev-item"><span class="ic">🫚☕</span><h4>Ginger Tea (Adrak Chai)</h4><span class="price">₹49</span></div>
+        <div class="bev-item"><span class="ic">🌱☕</span><h4>Cardamom Tea</h4><span class="price">₹49</span></div>
+        <div class="bev-item"><span class="ic">👑☕</span><h4>DHW Special Tea</h4><span class="price">₹69</span><p>Masala + cardamom + ginger blend.</p></div>
+        <div class="bev-item"><span class="ic">🧊☕</span><h4>Cold Coffee</h4><span class="price">₹120</span></div>
+        <div class="bev-item"><span class="ic">💪☕</span><h4>Strong Cold Coffee</h4><span class="price">₹129</span></div>
+        <div class="bev-item"><span class="ic">☕🥛</span><h4>Hot Coffee with Milk</h4><span class="price">₹59</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- ACCOMPANIMENTS -->
+<section class="menu-sec">
+  <div class="menu-inner">
+    <div class="menu-hd">
+      <div class="slbl">Saath Mein</div>
+      <h2 class="stitle">Boondi Raita, Dahi &amp; <em>Accompaniments</em></h2>
+      <p style="color:var(--smoke);font-size:14px;margin-top:6px">Har meal ko complete karne wali cheezein</p>
+    </div>
+    <div class="mg">
+      <div class="mi"><span class="ic">🫙</span><h4>Desi Flavor Boondi Raita</h4><span class="mhi">बूंदी रायता</span><p>North Indian raita — melt-in-the-mouth boondi + dahi + spices.</p><span class="price">₹79</span></div>
+      <div class="mi"><span class="ic">🥒</span><h4>Special Kheera Raita</h4><span class="mhi">खीरा रायता</span><p>Fresh cucumber + green chillies + dahi.</p><span class="price">₹99</span></div>
+      <div class="mi"><span class="ic">🥗</span><h4>Desi Mixed Raita</h4><span class="mhi">मिक्स रायता</span><p>Sliced onions + green chillies + mint + coriander in whisked dahi.</p><span class="price">₹75</span></div>
+      <div class="mi"><span class="ic">🥛</span><h4>Masala Chaach</h4><span class="mhi">मसाला छाछ</span><p>Churned dahi + cold water + cumin spices — digestion ke liye perfect.</p><span class="price">₹71</span></div>
+      <div class="mi"><span class="ic">🧈</span><h4>Amul Butter</h4><span class="mhi">मक्खन</span><p>Pure cream butter — goes perfectly with every dish.</p><span class="price">₹20</span></div>
+      <div class="mi"><span class="ic">🌿</span><h4>Mint Coriander Chutney</h4><span class="mhi">पुदीना चटनी</span><p>Tangy + spicy — fresh cilantro, mint, ginger, chillies.</p><span class="price">₹20</span></div>
+      <div class="mi"><span class="ic">🥭</span><h4>Imli Chutney</h4><span class="mhi">इमली चटनी</span><p>Sweet + tangy tamarind chutney with jaggery.</p><span class="price">₹30</span></div>
+      <div class="mi"><span class="ic">🥒🧅</span><h4>Vinegar Onion</h4><span class="mhi">सिरका प्याज़</span><p>Small red onions marinated in vinegar — classic dhaba style.</p><span class="price">₹20</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- THALI & COMBOS -->
+<section class="combos" id="combos">
+  <div class="combos-inner">
+    <div class="combos-hd">
+      <div class="slbl">Thali & Combo Meals</div>
+      <h2 class="stitle">Value Thalis &amp; <em>Pocket Friendly Combos</em></h2>
+      <p>Zyada khao, kam kharch karo — complete meal deals</p>
+    </div>
+    <div class="cg">
+      <div class="cc"><div class="cbdg">🌟 Popular</div><h3>DHW Special Veg Thali</h3><div class="ci"><span>Desi Ghee Rajma + Paneer Butter Masala</span><span>Amritsari Chole + Dal Makhani</span><span>Desi Boondi Raita + 5 Butter Tawa Roti</span><span>Rice + Pickle + Gulab Jamun + Salad</span></div><span class="ctag">₹429 — Complete Feast</span></div>
+      <div class="cc"><div class="cbdg">👑 Famous</div><h3>Famous Punjabi Thali</h3><div class="ci"><span>Paneer Rajwada + Mix Veg</span><span>Dal Makhani</span><span>4 Butter Tawa Roti + Rice + Salad</span></div><span class="ctag">₹329</span></div>
+      <div class="cc"><div class="cbdg">💰 Budget</div><h3>Veg Budget Thali</h3><div class="ci"><span>Kadhi Masala + Mix Veg</span><span>4 Tawa Roti</span></div><span class="ctag">₹139 — Best Value</span></div>
+      <div class="cc"><div class="cbdg">🥘 Medium</div><h3>Veg Thali [Medium]</h3><div class="ci"><span>Paneer Makhani + Mix Veg</span><span>Desi Ghee Rajma / Amritsari Chole</span><span>Rice + 4 Tawa Roti + Salad</span></div><span class="ctag">₹249</span></div>
+      <div class="cc"><div class="cbdg">🍛 Pocket</div><h3>Amritsari Chana Thali</h3><div class="ci"><span>Amritsari Chana Masala</span><span>4 Desi Ghee Poori + Salad</span></div><span class="ctag">₹149</span></div>
+      <div class="cc"><div class="cbdg">📦 Box Meal</div><h3>Makhani Box</h3><div class="ci"><span>Dal Makhani 300ml</span><span>1 Desi Laccha Paratha</span><span>Steamed Rice + Boondi Raita + Salad</span></div><span class="ctag">₹329 — Full Meal</span></div>
+      <div class="cc"><div class="cbdg">🧀 Paneer</div><h3>Paneer Fusion Box</h3><div class="ci"><span>Paneer Butter Masala + Dal Makhani</span><span>2 Laccha Paratha + Steamed Rice</span><span>Salad + Mint Chutney</span></div><span class="ctag">₹379</span></div>
+      <div class="cc"><div class="cbdg">🥘 Dal</div><h3>Dal Makhani Combo</h3><div class="ci"><span>Dal Makhani</span><span>5 Tawa Roti + Salad + Mint Chutney</span></div><span class="ctag">₹249</span></div>
+      <div class="cc"><div class="cbdg">🫘 Rajma</div><h3>Masala-E-Rajma Meal</h3><div class="ci"><span>Special Desi Ghee Rajma</span><span>4 Whole Wheat Tawa Chapati</span><span>Long Grain Basmati Rice + Onion Salad</span></div><span class="ctag">₹289</span></div>
+      <div class="cc"><div class="cbdg">🍳 Paratha</div><h3>Desi Aloo Paratha Combo</h3><div class="ci"><span>2 Aloo Paratha</span><span>Pickle + Chilli Sauce</span></div><span class="ctag">₹229</span></div>
+      <div class="cc"><div class="cbdg">🧀 Paneer</div><h3>Desi Paneer Paratha Combo</h3><div class="ci"><span>2 Paneer Paratha</span><span>Pickle + Chilli Sauce</span></div><span class="ctag">₹279</span></div>
+      <div class="cc"><div class="cbdg">🌿 Healthy</div><h3>Healthy Alpha Combo</h3><div class="ci"><span>Peanut Poha + Jeera Aloo</span><span>4 Desi Ghee Plain Paratha</span><span>Kadak Masala Chai + Mint Chutney</span></div><span class="ctag">₹349</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- VIBE -->
+<section class="vibe">
+  <div class="slbl">Kyun Desi HandiWala?</div>
+  <h2 class="stitle">Ghar Jaisa Khana,<br><em>Dil Se Bana</em></h2>
+  <p>Fast food nahi — yeh woh jagah hai jahan aap ek baar khao aur baar baar aao. Meerut ke dil mein, asli desi zaike ke saath.</p>
+  <div class="pills">
+    <span class="pill">🧈 Desi Ghee Mein Bana</span>
+    <span class="pill">🏺 Home Made Dahi</span>
+    <span class="pill">🫙 Boondi Raita</span>
+    <span class="pill">🌿 Fresh Masalas</span>
+    <span class="pill">🚫 No Shortcuts</span>
+    <span class="pill">❤️ Made With Love</span>
+    <span class="pill">📦 Zomato Delivery</span>
+    <span class="pill">💰 Pocket Friendly</span>
+    <span class="pill">🇮🇳 100% Desi</span>
+    <span class="pill">📍 Meerut</span>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Koi Bhi Sawaal? <span>Call Karo.</span></h2>
+  <p>Order, inquiry ya feedback — hum hamesha available hain</p>
+  <div class="crow">
+    <div class="ci2"><span class="lb">Call / WhatsApp</span><a href="tel:9410212545" class="val">+91 94102 12545</a></div>
+    <div class="ci2"><span class="lb">Instagram</span><a href="https://instagram.com/desihandiwala" target="_blank" class="val">@desihandiwala</a></div>
+    <div class="ci2"><span class="lb">Order Online</span><a href="https://zomato.onelink.me/xqzv/0ig80r3i" target="_blank" class="val">Zomato Pe Milein</a></div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta">
+  <h2>Bhookh Lagi?<br><span>Abhi Order Karo.</span></h2>
+  <p>Meerut mein fast delivery — Zomato ke zariye seedha aapke ghar tak</p>
+  <a href="https://zomato.onelink.me/xqzv/0ig80r3i" target="_blank" class="btn-z">🍽️ Zomato Pe Order Karo <span class="zb">LIVE</span></a>
+  <div class="dnote">Meerut mein delivery available · Zomato ke zariye</div>
+</section>
+
+<footer>
+  <p>© 2025 Desi HandiWala · 📍 Meerut, Uttar Pradesh<br>
+  📞 <a href="tel:9410212545">+91 94102 12545</a> &nbsp;|&nbsp;
+  📱 <a href="https://instagram.com/desihandiwala" target="_blank">@desihandiwala</a> &nbsp;|&nbsp;
+  🍽️ <a href="https://zomato.onelink.me/xqzv/0ig80r3i" target="_blank">Order on Zomato</a><br>
+  <span style="margin-top:8px;display:block">Marketing by <a href="https://sirohi210-commits.github.io/growuptoday/" target="_blank">Grow Up Marketing</a></span></p>
+</footer>
+
+<a class="wa" href="https://wa.me/919410212545" title="WhatsApp">💬</a>
+
+</body>
+</html>
